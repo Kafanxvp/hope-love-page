@@ -1,348 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Important Question for Hope 💖</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Hope 💖</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --pink: #ff4f91;
-      --light-pink: #ffd6e5;
-      --purple: #8d5cff;
-      --dark: #100816;
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      place-items: center;
       padding: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #120817, #481535);
+      font-family: Arial, sans-serif;
       color: white;
-      font-family: Georgia, serif;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255, 79, 145, 0.25), transparent 30%),
-        radial-gradient(circle at 80% 80%, rgba(141, 92, 255, 0.2), transparent 30%),
-        var(--dark);
-    }
-
-    .background-heart {
-      position: fixed;
-      color: rgba(255, 130, 180, 0.25);
-      font-size: 24px;
-      pointer-events: none;
-      animation: floatHeart 8s linear infinite;
-    }
-
-    .background-heart:nth-child(1) {
-      left: 8%;
-      bottom: -30px;
-      animation-delay: 0s;
-    }
-
-    .background-heart:nth-child(2) {
-      left: 25%;
-      bottom: -40px;
-      animation-delay: 2s;
-    }
-
-    .background-heart:nth-child(3) {
-      right: 20%;
-      bottom: -35px;
-      animation-delay: 4s;
-    }
-
-    .background-heart:nth-child(4) {
-      right: 7%;
-      bottom: -30px;
-      animation-delay: 6s;
-    }
-
-    @keyframes floatHeart {
-      0% {
-        transform: translateY(0) rotate(0deg) scale(0.8);
-        opacity: 0;
-      }
-
-      20% {
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(-110vh) rotate(360deg) scale(1.4);
-        opacity: 0;
-      }
     }
 
     .card {
       width: min(100%, 430px);
-      padding: 42px 28px 34px;
+      padding: 34px 22px;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 30px;
-      background: rgba(20, 10, 28, 0.82);
-      box-shadow:
-        0 25px 80px rgba(0, 0, 0, 0.5),
-        0 0 40px rgba(255, 79, 145, 0.16);
-      backdrop-filter: blur(12px);
-      animation: cardEntrance 1s ease forwards;
-      position: relative;
-      z-index: 2;
-    }
-
-    @keyframes cardEntrance {
-      from {
-        opacity: 0;
-        transform: translateY(35px) scale(0.9);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 28px;
+      background: rgba(29,13,39,.92);
+      box-shadow: 0 25px 70px rgba(0,0,0,.55);
     }
 
     .emoji {
-      font-size: 4.5rem;
-      display: inline-block;
-      animation: emojiBounce 2s ease-in-out infinite;
-      filter: drop-shadow(0 0 15px rgba(255, 90, 150, 0.6));
+      font-size: 65px;
+      animation: bounce 1.8s ease-in-out infinite;
     }
 
-    @keyframes emojiBounce {
+    @keyframes bounce {
       0%, 100% {
-        transform: rotate(-8deg) translateY(0);
+        transform: rotate(-7deg) translateY(0);
       }
 
       50% {
-        transform: rotate(8deg) translateY(-10px);
+        transform: rotate(7deg) translateY(-9px);
       }
     }
 
     h1 {
-      margin-top: 18px;
-      color: var(--light-pink);
-      font-size: clamp(2rem, 8vw, 3rem);
-      text-shadow: 0 0 18px rgba(255, 120, 180, 0.4);
+      margin: 14px 0 10px;
+      color: #ffd5e7;
+      font-size: clamp(2rem, 9vw, 3rem);
     }
 
-    .subtitle {
-      margin: 14px auto 0;
-      max-width: 340px;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 1rem;
+    p {
+      color: #ffeaf3;
       line-height: 1.7;
     }
 
     .question {
-      margin-top: 24px;
-      color: white;
-      font-size: 1.25rem;
+      margin-top: 20px;
+      font-size: 1.2rem;
       font-weight: bold;
     }
 
-    .button-area {
-      min-height: 110px;
-      margin-top: 24px;
+    .buttons {
+      height: 130px;
+      margin-top: 20px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 14px;
       position: relative;
     }
 
     button {
-      border: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 23px;
       color: white;
-      font-family: inherit;
-      font-size: 1rem;
+      font: inherit;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      touch-action: manipulation;
     }
 
-    button:hover {
-      transform: scale(1.06);
+    .yes {
+      background: linear-gradient(135deg, #ff5798, #ff1767);
+      box-shadow: 0 10px 25px rgba(255,23,103,.4);
     }
 
-    .yes-button {
-      padding: 14px 28px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ff4f91, #ff176c);
-      box-shadow: 0 8px 25px rgba(255, 23, 108, 0.35);
-    }
-
-    .no-button {
-      padding: 12px 22px;
-      border-radius: 999px;
-      color: #ffd9e7;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      position: relative;
+    .no {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
     }
 
     .hint {
-      min-height: 24px;
-      margin-top: 4px;
-      color: #ffb5ce;
-      font-size: 0.85rem;
+      height: 28px;
+      color: #ffabc9;
+      font-size: .9rem;
       font-style: italic;
     }
 
-    .success-message {
+    .message {
       display: none;
-      margin-top: 22px;
-      padding: 20px;
+      margin-top: 16px;
+      padding: 18px;
       border-radius: 20px;
-      background: rgba(255, 79, 145, 0.13);
-      border: 1px solid rgba(255, 140, 190, 0.25);
-      animation: messagePop 0.6s ease forwards;
+      background: rgba(255,79,145,.15);
+      border: 1px solid rgba(255,159,193,.4);
+      line-height: 1.7;
     }
 
-    .success-message.show {
+    .message.show {
       display: block;
     }
 
-    @keyframes messagePop {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    .success-message h2 {
-      color: #ff9fc1;
-      margin-bottom: 10px;
-      font-size: 1.45rem;
-    }
-
-    .success-message p {
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .signature {
-      margin-top: 14px;
-      color: #ffd6e5;
-      font-weight: bold;
+    .footer {
+      margin-top: 20px;
+      color: rgba(255,255,255,.5);
+      font-size: .75rem;
     }
 
     .heart {
       position: fixed;
       z-index: 5;
       pointer-events: none;
-      font-size: 25px;
-      animation: explodeHeart 2.5s ease-out forwards;
+      font-size: 27px;
+      animation: fly 2.2s ease-out forwards;
     }
 
-    @keyframes explodeHeart {
-      0% {
-        opacity: 1;
-        transform: translate(0, 0) scale(0.5) rotate(0deg);
-      }
-
-      100% {
-        opacity: 0;
+    @keyframes fly {
+      to {
         transform:
           translate(var(--x), var(--y))
-          scale(1.5)
-          rotate(360deg);
+          rotate(360deg)
+          scale(1.5);
+        opacity: 0;
       }
-    }
-
-    .footer {
-      margin-top: 24px;
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.75rem;
     }
 
     @media (max-width: 420px) {
       .card {
-        padding: 34px 20px 28px;
+        padding: 30px 18px;
       }
 
-      .button-area {
-        min-height: 125px;
+      .buttons {
+        height: 140px;
       }
 
-      .no-button {
+      .no {
         position: absolute;
-        margin-top: 70px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        margin-top: 75px;
       }
     }
   </style>
 </head>
 
 <body>
-  <span class="background-heart">♥</span>
-  <span class="background-heart">♥</span>
-  <span class="background-heart">♥</span>
-  <span class="background-heart">♥</span>
-
   <main class="card">
     <div class="emoji">🥺</div>
 
     <h1>Hey Hope 💖</h1>
 
-    <p class="subtitle">
-      I have a very serious question for you.
-      Please think carefully before answering...
+    <p>
+      I have a very serious question for you...<br>
+      Please think carefully 😌
     </p>
 
     <p class="question">
-      Are you ready to be loved forever? 😌
+      Are you ready to be loved forever?
     </p>
 
-    <div class="button-area">
-      <button class="yes-button" id="yesButton">
+    <div class="buttons">
+      <button class="yes" id="yes" type="button">
         Yes, obviously 💕
       </button>
 
-      <button class="no-button" id="noButton">
+      <button class="no" id="no" type="button">
         No 😐
       </button>
     </div>
 
     <div class="hint" id="hint"></div>
 
-    <section class="success-message" id="successMessage">
-      <h2>Excellent choice! 😌💘</h2>
-
-      <p>
-        Hope, you are officially stuck with me now.
-        No refunds, no cancellations, and absolutely no escape.
-        I promise to make you smile, support you, and love you
-        more than pizza... and you know how serious that is. 🍕❤️
-      </p>
-
-      <div class="signature">
-        Forever yours 🌹
-      </div>
-    </section>
+    <div class="message" id="message">
+      <b>Excellent choice! 😌💘</b><br>
+      You are officially stuck with me now.
+      No refunds, no cancellations, and absolutely no escape 😂❤️
+      <br>
+      Forever yours, Hope 🌹
+    </div>
 
     <div class="footer">
       Made with love, jokes, and zero escape routes ✨
@@ -350,70 +198,79 @@
   </main>
 
   <script>
-    const yesButton = document.getElementById("yesButton");
-    const noButton = document.getElementById("noButton");
+    const yesButton = document.getElementById("yes");
+    const noButton = document.getElementById("no");
     const hint = document.getElementById("hint");
-    const successMessage = document.getElementById("successMessage");
+    const message = document.getElementById("message");
 
-    const funnyMessages = [
+    const jokes = [
       "Nice try 😏",
-      "That button is feeling shy.",
-      "Are you sure about that? 👀",
-      "The answer is obviously yes.",
-      "You cannot escape love!",
-      "The No button has gone on vacation 😂",
-      "Please choose the romantic option."
+      "The No button is shy 😂",
+      "Are you sure? 👀",
+      "Love does not accept No today!",
+      "Please choose the romantic option 💕"
     ];
 
-    let messageIndex = 0;
-
-    noButton.addEventListener("mouseenter", moveNoButton);
-    noButton.addEventListener("touchstart", moveNoButton);
+    let jokeIndex = 0;
 
     function moveNoButton(event) {
-      event.preventDefault();
+      if (event) {
+        event.preventDefault();
+      }
 
-      const area = document.querySelector(".button-area");
-      const areaRect = area.getBoundingClientRect();
+      const randomMove = Math.floor(Math.random() * 180) - 90;
 
-      const maxX = Math.max(20, areaRect.width - noButton.offsetWidth - 20);
-      const randomX = Math.floor(Math.random() * maxX) - areaRect.width / 4;
+      noButton.style.transform =
+        "translateX(" + randomMove + "px)";
 
-      noButton.style.transform = `translateX(${randomX}px)`;
+      hint.textContent = jokes[jokeIndex];
 
-      hint.textContent = funnyMessages[messageIndex];
-      messageIndex = (messageIndex + 1) % funnyMessages.length;
+      jokeIndex = (jokeIndex + 1) % jokes.length;
     }
 
-    yesButton.addEventListener("click", () => {
-      successMessage.classList.add("show");
-      hint.textContent = "I knew you would choose wisely 😌";
+    noButton.addEventListener("click", moveNoButton);
 
-      yesButton.textContent = "Forever and ever 💞";
+    noButton.addEventListener(
+      "touchstart",
+      moveNoButton,
+      { passive: false }
+    );
+
+    noButton.addEventListener("mouseenter", moveNoButton);
+
+    yesButton.addEventListener("click", function () {
+      message.classList.add("show");
+
+      hint.textContent =
+        "I knew you would choose wisely 😍";
+
+      yesButton.textContent =
+        "Forever and ever 💞";
+
       yesButton.disabled = true;
-      yesButton.style.cursor = "default";
-
       noButton.style.display = "none";
 
       createHearts();
     });
 
     function createHearts() {
-      const hearts = ["💖", "💕", "💗", "💘", "🌹", "✨"];
+      const icons = ["💖", "💕", "💗", "💘", "🌹", "✨"];
 
-      for (let i = 0; i < 35; i++) {
+      for (let i = 0; i < 30; i++) {
         const heart = document.createElement("span");
-        heart.className = "heart";
-        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
 
-        heart.style.left = `${window.innerWidth / 2}px`;
-        heart.style.top = `${window.innerHeight / 2}px`;
-        heart.style.setProperty("--x", `${Math.random() * 500 - 250}px`);
-        heart.style.setProperty("--y", `${Math.random() * 500 - 250}px`);
-        heart.style.animationDelay = `${Math.random() * 0.5}s`;
+        heart.className = "heart";
+        heartProperty "--x",
+          Math.random() * 500 - 250 + "px"
+        );
+
+        heart.style.setProperty(
+          "--y",
+          Math.random() * 500 - 250 + "px"
+        );
 
         document.body.appendChild(heart);
 
-        setTimeout(() => {
+        setTimeout(function () {
           heart.remove();
-       >
+       /hope-love-page/?v=30
