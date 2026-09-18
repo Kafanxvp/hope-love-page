@@ -1,15 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Hope 💖</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Gift 💖</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
@@ -17,260 +13,184 @@
       place-items: center;
       padding: 20px;
       overflow: hidden;
-      background: linear-gradient(135deg, #120817, #481535);
+      background: linear-gradient(135deg, #140b1d, #47193a);
       font-family: Arial, sans-serif;
       color: white;
     }
 
     .card {
       width: min(100%, 430px);
-      padding: 34px 22px;
+      padding: 32px 22px;
       text-align: center;
-      border: 1px solid rgba(255,255,255,.15);
       border-radius: 28px;
-      background: rgba(29,13,39,.92);
-      box-shadow: 0 25px 70px rgba(0,0,0,.55);
+      background: rgba(29, 13, 39, 0.92);
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 25px 70px rgba(0,0,0,.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 24px;
+      opacity: .4;
+      animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(.7); opacity: 0; }
+      20% { opacity: .8; }
+      100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
     }
 
     .emoji {
-      font-size: 65px;
+      font-size: 66px;
       animation: bounce 1.8s ease-in-out infinite;
     }
 
     @keyframes bounce {
-      0%, 100% {
-        transform: rotate(-7deg) translateY(0);
-      }
-
-      50% {
-        transform: rotate(7deg) translateY(-9px);
-      }
+      0%, 100% { transform: rotate(-6deg) translateY(0); }
+      50% { transform: rotate(6deg) translateY(-8px); }
     }
 
     h1 {
-      margin: 14px 0 10px;
-      color: #ffd5e7;
-      font-size: clamp(2rem, 9vw, 3rem);
+      margin: 12px 0 10px;
+      color: #ffd6e9;
+      font-size: clamp(2rem, 9vw, 2.8rem);
     }
 
     p {
-      color: #ffeaf3;
       line-height: 1.7;
+      color: #ffeaf3;
     }
 
-    .question {
-      margin-top: 20px;
-      font-size: 1.2rem;
-      font-weight: bold;
+    .hidden {
+      display: none;
     }
 
-    .buttons {
-      height: 130px;
-      margin-top: 20px;
+    .download-box {
+      margin-top: 22px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 14px;
-      position: relative;
     }
 
-    button {
-      border: 0;
+    .download-btn {
+      border: none;
       border-radius: 999px;
-      padding: 14px 23px;
-      color: white;
-      font: inherit;
+      padding: 16px 30px;
+      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      touch-action: manipulation;
+      background: linear-gradient(135deg, #ff5aa5, #ff1669);
+      color: white;
+      box-shadow: 0 10px 25px rgba(255, 22, 105, 0.45);
+      transition: transform .2s ease;
     }
 
-    .yes {
-      background: linear-gradient(135deg, #ff5798, #ff1767);
-      box-shadow: 0 10px 25px rgba(255,23,103,.4);
+    .download-btn:hover {
+      transform: scale(1.04);
     }
 
-    .no {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.25);
-    }
-
-    .hint {
-      height: 28px;
-      color: #ffabc9;
-      font-size: .9rem;
-      font-style: italic;
+    .gift-content {
+      margin-top: 18px;
     }
 
     .message {
-      display: none;
-      margin-top: 16px;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,79,145,.15);
-      border: 1px solid rgba(255,159,193,.4);
-      line-height: 1.7;
+      background: rgba(255,79,145,.12);
+      border: 1px solid rgba(255,159,193,.35);
+      border-radius: 18px;
+      padding: 18px 14px;
+      line-height: 1.8;
+      color: white;
     }
 
-    .message.show {
-      display: block;
-    }
-
-    .footer {
-      margin-top: 20px;
-      color: rgba(255,255,255,.5);
-      font-size: .75rem;
+    .love {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffd7ea;
     }
 
     .heart {
       position: fixed;
       z-index: 5;
       pointer-events: none;
-      font-size: 27px;
-      animation: fly 2.2s ease-out forwards;
+      font-size: 26px;
+      animation: fly 2.3s ease-out forwards;
     }
 
     @keyframes fly {
       to {
-        transform:
-          translate(var(--x), var(--y))
-          rotate(360deg)
-          scale(1.5);
+        transform: translate(var(--x), var(--y)) rotate(360deg) scale(1.5);
         opacity: 0;
       }
     }
 
     @media (max-width: 420px) {
-      .card {
-        padding: 30px 18px;
-      }
-
-      .buttons {
-        height: 140px;
-      }
-
-      .no {
-        position: absolute;
-        margin-top: 75px;
-      }
+      .card { padding: 28px 16px; }
     }
   </style>
 </head>
-
 <body>
   <main class="card">
-    <div class="emoji">🥺</div>
+    <div class="sparkle" style="left:10%;top:18%;">💖</div>
+    <div class="sparkle" style="right:12%;top:20%;">✨</div>
+    <div class="sparkle" style="left:18%;bottom:12%;">💗</div>
+    <div class="sparkle" style="right:18%;bottom:16%;">💕</div>
 
-    <h1>Hey Hope 💖</h1>
+    <div id="downloadSection">
+      <div class="emoji">💌</div>
+      <h1>Love Gift</h1>
+      <p>
+        A little surprise is waiting for you.<br>
+        tap the button to open it.
+      </p>
 
-    <p>
-      I have a very serious question for you...<br>
-      Please think carefully 😌
-    </p>
-
-    <p class="question">
-      Are you ready to be loved forever?
-    </p>
-
-    <div class="buttons">
-      <button class="yes" id="yes" type="button">
-        Yes, obviously 💕
-      </button>
-
-      <button class="no" id="no" type="button">
-        No 😐
-      </button>
+      <div class="download-box">
+        <button class="download-btn" id="downloadBtn">Download my love 💖</button>
+      </div>
     </div>
 
-    <div class="hint" id="hint"></div>
+    <div id="giftSection" class="gift-content hidden">
+      <div class="emoji">🥺💘</div>
+      <h1>Hey Hope 💖</h1>
 
-    <div class="message" id="message">
-      <b>Excellent choice! 😌💘</b><br>
-      You are officially stuck with me now.
-      No refunds, no cancellations, and absolutely no escape 😂❤️
-      <br>
-      Forever yours, Hope 🌹
-    </div>
-
-    <div class="footer">
-      Made with love, jokes, and zero escape routes ✨
+      <div class="message">
+        <div class="love">Dear Hope,</div>
+        <br>
+        You are my favorite smile, my warmest thought, and my sweetest chaos.
+        <br><br>
+        I may not be able to give you the whole world, but I can give you my time, my laughter, and my heart.
+        <br><br>
+        Thank you for being you — beautiful, kind, and impossible to forget.
+        <br><br>
+        I hope this little surprise makes you smile the way you make me smile.
+        <br><br>
+        <strong>Forever yours 💞</strong>
+      </div>
     </div>
   </main>
 
   <script>
-    const yesButton = document.getElementById("yes");
-    const noButton = document.getElementById("no");
-    const hint = document.getElementById("hint");
-    const message = document.getElementById("message");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const downloadSection = document.getElementById("downloadSection");
+    const giftSection = document.getElementById("giftSection");
 
-    const jokes = [
-      "Nice try 😏",
-      "The No button is shy 😂",
-      "Are you sure? 👀",
-      "Love does not accept No today!",
-      "Please choose the romantic option 💕"
-    ];
-
-    let jokeIndex = 0;
-
-    function moveNoButton(event) {
-      if (event) {
-        event.preventDefault();
-      }
-
-      const randomMove = Math.floor(Math.random() * 180) - 90;
-
-      noButton.style.transform =
-        "translateX(" + randomMove + "px)";
-
-      hint.textContent = jokes[jokeIndex];
-
-      jokeIndex = (jokeIndex + 1) % jokes.length;
-    }
-
-    noButton.addEventListener("click", moveNoButton);
-
-    noButton.addEventListener(
-      "touchstart",
-      moveNoButton,
-      { passive: false }
-    );
-
-    noButton.addEventListener("mouseenter", moveNoButton);
-
-    yesButton.addEventListener("click", function () {
-      message.classList.add("show");
-
-      hint.textContent =
-        "I knew you would choose wisely 😍";
-
-      yesButton.textContent =
-        "Forever and ever 💞";
-
-      yesButton.disabled = true;
-      noButton.style.display = "none";
-
-      createHearts();
-    });
-
-    function createHearts() {
-      const icons = ["💖", "💕", "💗", "💘", "🌹", "✨"];
+    downloadBtn.addEventListener("click", function () {
+      downloadSection.classList.add("hidden");
+      giftSection.classList.remove("hidden");
 
       for (let i = 0; i < 30; i++) {
         const heart = document.createElement("span");
-
         heart.className = "heart";
-        heartProperty "--x",
-          Math.random() * 500 - 250 + "px"
-        );
-
-        heart.style.setProperty(
-          "--y",
-          Math.random() * 500 - 250 + "px"
-        );
-
+        heart.textContent = ["💖", "💕", "💗", "💘", "🌹", "✨"][Math.floor(Math.random() * 6)];
+        heart.style.left = "50%";
+        heart.style.top = "50%";
+        heart.style.setProperty("--x", (Math.random() * 500 - 250) + "px");
+        heart.style.setProperty("--y", (Math.random() * 500 - 250) + "px");
         document.body.appendChild(heart);
-
-        setTimeout(function () {
-          heart.remove();
-       /hope-love-page/?v=30
+        setTimeout(() => heart.remove(), 2200);
+      }
+    });
+  </script>
+</body>
+</html>
