@@ -1,3 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Hope ♡</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #10060e;
+  color: white;
+  font-family: Georgia, serif;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #70203e 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, #49142f 0%, transparent 45%),
+    linear-gradient(145deg, #10060e, #240d1d, #10060e);
+  z-index: -2;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(2px 2px at 70% 20%, #ffb4d2, transparent),
+    radial-gradient(2px 2px at 40% 80%, #fff, transparent),
+    radial-gradient(2px 2px at 85% 65%, #ffb4d2, transparent);
+  background-size: 180px 180px;
+  animation: twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .2; }
+  to { opacity: .9; }
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.small {
+  color: #e9a3bf;
+  letter-spacing: 5px;
+  font-size: 11px;
+  animation: fade 2s both;
+}
+
+h1 {
+  font-size: clamp(65px, 15vw, 110px);
+  color: #ffb6d0;
+  text-shadow: 0 0 15px #ff4e91,
+               0 0 60px #ff367f;
+  font-weight: normal;
+  margin: 20px 0;
+  animation: glow 4s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 15px #ff4e91; }
+  to {
+    text-shadow: 0 0 35px #ff4e91,
+                 0 0 90px #ff367f;
+  }
+}
+
+p {
+  color: #f4d8e4;
+  line-height: 2;
+  font-size: 16px;
+  max-width: 440px;
+}
+
+button {
+  margin-top: 30px;
+  border: 1px solid #ff9cbe;
+  color: white;
+  background: #ff478b22;
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+button:hover {
+  background: #ff478b;
+  box-shadow: 0 0 30px #ff478b;
+}
+
+.divider {
+  width: 90px;
+  height: 1px;
+  background: #ff9cbe;
+  margin: 30px auto;
+  box-shadow: 0 0 15px #ff478b;
+}
+
+.card {
+  background: #ffffff09;
+  border: 1px solid #ff9cbe44;
+  border-radius: 25px;
+  padding: 30px 22px;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 35px #ff478b12;
+  margin: 20px 0;
+}
+
+.card h2 {
+  color: #ffb6d0;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+#secret {
+  display: none;
+  animation: fade 2s both;
+  width: 100%;
+}
+
+.music {
+  margin-top: 35px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #ff9cbe44;
+  background: #ffffff0b;
+  width: 100%;
+  max-width: 380px;
+}
+
+.music iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: rise linear forwards;
+  z-index: 5;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  padding: 30px;
+  color: #c88da7;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="stars"></div>
+
+<section>
+
+  <div class="small">
+    A LITTLE WORLD MADE FOR YOU
+  </div>
+
+  <h1>Hope ♡</h1>
+
+  <div class="divider"></div>
+
+  <p>
+    Some people make the world feel softer.
+    Some make ordinary days unforgettable.
+    And somehow, you manage to do both.
+    <br><br>
+    This little universe is yours.
+  </p>
+
+  <button onclick="reveal()">
+    ENTER MY HEART ♡
+  </button>
+
+  <div id="secret">
+
+    <div class="divider"></div>
+
+    <div class="card">
+
+      <h2>Dear Hope, 🌹</h2>
+
+      <p>
+        If the stars could speak,
+        I think they would tell you
+        how beautiful you make this universe.
+        <br><br>
+
+        If every flower could write,
+        they would fill the world
+        with stories about you.
+        <br><br>
+
+        And if I could give you one thing,
+        it would be a chance to see
+        just how special you are.
+        <br><br>
+
+        You are a beautiful part
+        of my favorite story.
+        <br><br>
+
+        <span style="color:#ff9cbe">
+          Forever a little piece of my heart. ♡
+        </span>
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h2>One Little Wish ✨</h2>
+
+      <p>
+        May your nights be peaceful,
+        your mornings beautiful,
+        and your heart always find
+        a thousand reasons to smile.
+        <br><br>
+
+        I hope life gives you
+        everything your heart wishes for.
+      </p>
+
+    </div>
+
+    <div class="music">
+
+      <h2 style="color:#ffb6d0;font-weight:normal">
+        Our Little Song 🎧
+      </h2>
+
+      <p>Ya'aburnee — Halsey</p>
+
+      <iframe
+        src="https://www.youtube.com/embed/JdoEoScMbmM"
+        title="Ya'aburnee - Halsey"
+        frameborder="0"
+        allow="accelerometer; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+      <p style="font-size:11px;margin-top:12px">
+        A little melody for a special person. ♡
       </p>
 
     </div>
@@ -22,3 +315,65 @@
       </p>
 
     </div>
+
+  </div>
+
+  <footer>
+    MADE WITH LOVE ♡ JUST FOR HOPE
+  </footer>
+
+</section>
+
+<script>
+
+function reveal() {
+
+  const secret = document.getElementById("secret");
+
+  secret.style.display = "block";
+
+  document.querySelector("button").style.display = "none";
+
+  secret.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  for(let i = 0; i < 35; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+
+}
+
+function createHeart() {
+
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  heart.innerHTML = ["♡","♥","💗","🌹","✨"][
+    Math.floor(Math.random() * 5)
+  ];
+
+  heart.style.left = Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (15 + Math.random() * 25) + "px";
+
+  heart.style.animationDuration =
+    (5 + Math.random() * 6) + "s";
+
+  heart.style.color = "#ff9cbe";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 11000);
+
+}
+
+setInterval(createHeart, 650);
+
+</script>
+
+</body>
+</html>
