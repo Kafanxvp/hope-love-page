@@ -72,12 +72,13 @@
     }
 
     p {
+      width: 100%;
       max-width: 440px;
       margin: 0 auto;
       color: #f4d8e4;
       font-size: 16px;
       line-height: 2;
-      text-align: center;
+      text-align: center !important;
     }
 
     button {
@@ -106,16 +107,28 @@
       box-shadow: 0 0 15px #ff478b;
     }
 
+    #secret {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fade 2s both;
+    }
+
     .card,
     .music {
       width: 100%;
       text-align: center;
+      margin-left: auto;
+      margin-right: auto;
       border: 1px solid #ff9cbe44;
     }
 
     .card {
       max-width: 400px;
-      margin: 20px 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
       padding: 30px 22px;
       border-radius: 25px;
       background: #ffffff09;
@@ -130,15 +143,9 @@
       font-weight: normal;
     }
 
-    #secret {
-      display: none;
-      width: 100%;
-      animation: fade 2s both;
-    }
-
     .music {
       max-width: 380px;
-      margin-top: 35px;
+      margin-top: 15px;
       padding: 20px;
       border-radius: 20px;
       background: #ffffff0b;
@@ -291,7 +298,8 @@
   <script>
     function reveal() {
       const secret = document.getElementById("secret");
-      secret.style.display = "block";
+      secret.style.display = "flex";
+
       document.querySelector("button").style.display = "none";
       secret.scrollIntoView({ behavior: "smooth", block: "start" });
 
